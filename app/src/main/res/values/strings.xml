@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">CameraXFaceDetection</string>
-    <string name="switch_camera">Switch Camera</string>
+    <string name="app_name">Найти людей!</string>
+    <string name="switch_camera">Поменять камеру</string>
 </resources>

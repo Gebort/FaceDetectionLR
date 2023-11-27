@@ -1,13 +1,15 @@
 package com.androchef.cameraxfacedetection
 
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.OvershootInterpolator
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.androchef.cameraxfacedetection.camerax.CameraManager
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +37,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun onClicks() {
         btnSwitch.setOnClickListener {
+            it.clearAnimation()
+            it.animate()
+                .rotationBy(180f)
+                .withLayer()
+                .setDuration(1000)
+                .setInterpolator(OvershootInterpolator())
+                .start()
             cameraManager.changeCameraSelector()
         }
     }

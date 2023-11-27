@@ -17,6 +17,7 @@ class FaceContourDetectionProcessor(private val view: GraphicOverlay) :
     private val realTimeOpts = FaceDetectorOptions.Builder()
         .setPerformanceMode(FaceDetectorOptions.PERFORMANCE_MODE_FAST)
         .setContourMode(FaceDetectorOptions.CONTOUR_MODE_NONE)
+        .setClassificationMode(FaceDetectorOptions.CLASSIFICATION_MODE_ALL)
         .build()
 
     private val detector = FaceDetection.getClient(realTimeOpts)
